@@ -15,6 +15,8 @@
 		287DC5872350D2FD000112D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 287DC5862350D2FD000112D0 /* main.m */; };
 		287DC5972350D4E2000112D0 /* CMAMovieCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 287DC5962350D4E2000112D0 /* CMAMovieCollection.m */; };
 		287DC59A2350DC16000112D0 /* CMAMovieCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287DC5992350DC16000112D0 /* CMAMovieCollectionController.m */; };
+		287DC59D2350E3B7000112D0 /* CMAMovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287DC59C2350E3B7000112D0 /* CMAMovieListTableViewController.swift */; };
+		287DC59F2350E3CA000112D0 /* CMAMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287DC59E2350E3CA000112D0 /* CMAMovieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		287DC5962350D4E2000112D0 /* CMAMovieCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMAMovieCollection.m; sourceTree = "<group>"; };
 		287DC5982350DC16000112D0 /* CMAMovieCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMAMovieCollectionController.h; sourceTree = "<group>"; };
 		287DC5992350DC16000112D0 /* CMAMovieCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMAMovieCollectionController.m; sourceTree = "<group>"; };
+		287DC59B2350E3B7000112D0 /* MovieFinder-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MovieFinder-C-Bridging-Header.h"; sourceTree = "<group>"; };
+		287DC59C2350E3B7000112D0 /* CMAMovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMAMovieListTableViewController.swift; sourceTree = "<group>"; };
+		287DC59E2350E3CA000112D0 /* CMAMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMAMovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +138,19 @@
 		287DC5932350D350000112D0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				287DC59C2350E3B7000112D0 /* CMAMovieListTableViewController.swift */,
+				287DC59B2350E3B7000112D0 /* MovieFinder-C-Bridging-Header.h */,
+				287DC5A02350E412000112D0 /* CustomCells */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		287DC5A02350E412000112D0 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				287DC59E2350E3CA000112D0 /* CMAMovieTableViewCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +185,7 @@
 				TargetAttributes = {
 					287DC5702350D2FC000112D0 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -208,8 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				287DC59F2350E3CA000112D0 /* CMAMovieTableViewCell.swift in Sources */,
 				287DC5972350D4E2000112D0 /* CMAMovieCollection.m in Sources */,
 				287DC5762350D2FC000112D0 /* AppDelegate.m in Sources */,
+				287DC59D2350E3B7000112D0 /* CMAMovieListTableViewController.swift in Sources */,
 				287DC5872350D2FD000112D0 /* main.m in Sources */,
 				287DC5792350D2FC000112D0 /* SceneDelegate.m in Sources */,
 				287DC59A2350DC16000112D0 /* CMAMovieCollectionController.m in Sources */,
@@ -352,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5XC6N4RBRH;
 				INFOPLIST_FILE = "$(SRCROOT)/MovieFinder-C/Resources/Info.plist";
@@ -361,6 +381,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "calegre.MovieFinder-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieFinder-C/Controllers/ViewControllers/MovieFinder-C-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -369,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5XC6N4RBRH;
 				INFOPLIST_FILE = "$(SRCROOT)/MovieFinder-C/Resources/Info.plist";
@@ -378,6 +402,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "calegre.MovieFinder-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieFinder-C/Controllers/ViewControllers/MovieFinder-C-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
